@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mechanical Measurements &amp; Metrology Virtual Lab</title>
+<meta name="description" content="Virtual mechanical measurements and metrology laboratory: calibration of pressure, temperature, displacement, force and speed transducers, strain gauges, tool dynamometers, micrometers, comparators, sine bar, autocollimator, surface roughness, optical flats, thread and gear measurement and the toolmaker's microscope, each with pre-test, theory, operation, experiment, validation, numericals, post-test and report stages.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/lab.css">
+<script>document.write('<script src="config.js?t='+Date.now()+'"><\/script>')</script>
+</head>
+<body>
+<a class="skip" href="#app">Skip to content</a>
+<header class="topbar">
+  <div class="wrap">
+    <button class="iconbtn railbtn" id="railBtn" type="button" aria-label="Show experiment list" aria-controls="rail">☰</button>
+    <a class="brand" href="#">
+      <img class="brand-logo" id="brandLogo" alt="MITE logo" width="26" height="38">
+      <div><b>Measurements &amp; Metrology Virtual Lab</b><span>MITE Moodbidri · 18 experiments</span></div>
+    </a>
+    <div class="spacer"></div>
+    <nav class="topnav" aria-label="Main"><a href="#">Overview</a><a href="#lab">Experiments</a><a href="#handbook">Handbook</a><a href="#about">About</a></nav>
+    <button class="iconbtn" id="themeBtn" title="Switch colour theme">Auto</button>
+  </div>
+</header>
+<div class="shell"><nav class="rail" id="rail" aria-label="Experiments"></nav><main id="app"></main></div>
+<footer class="site-foot">© 2026 Dr. Vignesh Nayak Ullal, Department of Mechanical Engineering, Mangalore Institute of Technology &amp; Engineering (MITE), Moodbidri. Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license noopener" target="_blank">CC BY-NC-SA 4.0</a>. Source: <a href="https://github.com/nayakvignesh113-bot/MMM_Virtual-Lab" target="_blank" rel="noopener">GitHub</a>. Simulation outputs are model estimates for teaching. <a href="#faculty">Faculty</a></footer>
+
+<script src="assets/js/core.js"></script>
+<script src="assets/js/logo.js"></script>
+<script src="assets/js/kit.js"></script>
+<!-- EXP -->
+<script src="assets/js/exp/01-dwt.js"></script>
+<script src="assets/js/exp/02-tc.js"></script>
+<script src="assets/js/exp/03-rtd.js"></script>
+<script src="assets/js/exp/04-lvdt.js"></script>
+<script src="assets/js/exp/05-loadcell.js"></script>
+<script src="assets/js/exp/06-speed.js"></script>
+<script src="assets/js/exp/07-strain.js"></script>
+<script src="assets/js/exp/08-latheforce.js"></script>
+<script src="assets/js/exp/09-drilldyn.js"></script>
+<script src="assets/js/exp/10-micrometer.js"></script>
+<script src="assets/js/exp/11-comparator.js"></script>
+<script src="assets/js/exp/12-sinebar.js"></script>
+<script src="assets/js/exp/13-autocollimator.js"></script>
+<script src="assets/js/exp/14-roughness.js"></script>
+<script src="assets/js/exp/15-opticalflat.js"></script>
+<script src="assets/js/exp/16-thread.js"></script>
+<script src="assets/js/exp/17-gear.js"></script>
+<script src="assets/js/exp/18-tmm.js"></script>
+<!-- /EXP -->
+<script src="assets/js/site.js"></script>
+<script src="assets/js/cert.js"></script>
+<script src="assets/js/handbook.js"></script>
+<script>LAB.ext.buildRail(); LAB.boot();</script>
+</body>
+</html>

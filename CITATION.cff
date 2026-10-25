@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use the Mechanical Measurements and Metrology Virtual Lab in teaching or research, please cite it as below."
+type: software
+title: "Mechanical Measurements and Metrology Virtual Lab: an open virtual laboratory for transducer calibration, strain and force measurement, and dimensional, angular, surface, thread, gear and optical metrology"
+abstract: >-
+  Browser-based virtual laboratory with 18 experiments: calibration of a pressure
+  gauge with a dead-weight tester, of a thermocouple, a Pt100 RTD, an LVDT, a
+  strain-gauge load cell and a tachometer; Young's modulus and Poisson's ratio
+  with strain gauges; lathe and drill tool dynamometers; micrometer calibration
+  with slip gauges; comparator inspection and limit-gauge design; sine bar;
+  autocollimator straightness; stylus surface roughness; optical-flat flatness;
+  two-wire thread measurement; gear tooth vernier and base tangent span; and the
+  toolmaker's microscope. Each experiment has pre-test, theory with narrated
+  explainer, operation with safety briefing and interlocked set-up, instrument
+  scales read by the student, validation, randomised numericals, post-test and a
+  report with uncertainty analysis; plus a metrology handbook with ISO 286, ITS-90
+  and IEC 60751 tables and calculators.
+authors:
+  - family-names: Ullal
+    given-names: Vignesh Nayak
+    affiliation: "Department of Mechanical Engineering, Mangalore Institute of Technology & Engineering (MITE), Moodbidri, India"
+version: "1.0"
+date-released: "2026-10-25"
+license: CC-BY-NC-SA-4.0
+url: "https://nayakvignesh113-bot.github.io/MMM_Virtual-Lab/"
+repository-code: "https://github.com/nayakvignesh113-bot/MMM_Virtual-Lab"
+keywords:
+  - metrology
+  - mechanical measurements
+  - calibration
+  - virtual laboratory
+  - engineering education
+  - ISO 286
+  - strain gauge
+  - surface roughness

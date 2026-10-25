@@ -1,0 +1,571 @@
+{
+ "dwt": {
+  "name": "Calibration of a Pressure Gauge using a Dead-Weight Tester",
+  "theory": [
+   "A dead-weight tester, or piston gauge, produces a pressure that is known from first principles. A vertical piston, lapped into a cylinder with a clearance of a few micrometres, is loaded with weights. Oil pressure underneath lifts the piston until it floats, and then the pressure equals the weight divided by the effective area: p = mg/A_e. Because mass, length and gravity can all be traced to national standards, the piston gauge is a primary pressure standard, accurate to 0.01–0.05 % of reading.",
+   "Weights are usually marked in pressure units for standard gravity, 9.806 65 m/s². Gravity varies with latitude and height: at Moodbidri it is about 9.783 m/s², 0.24 % lower, so every weight produces 0.24 % less pressure than its marking. Air buoyancy reduces the force of steel weights by about 0.015 %, and the certificate gives an effective area slightly different from nominal. The true pressure is therefore the nominal value multiplied by (g/g_n)(1 − ρ_a/ρ_w)(A_0/A_e). A height difference between the piston base and the gauge adds an oil head ρgh, which is zero here because both sit at the same level.",
+   "The tester is levelled so that the piston is vertical. Oil is drawn from the reservoir into the screw press, and air is bled out, because trapped air makes the pressure spongy and slow to settle. With the valve to the reservoir closed, the press is wound in until the loaded piston floats at mid-stroke. The weights are spun gently: rotation breaks the friction between piston and cylinder so that the weights are carried entirely by the oil. The gauge is tapped lightly before each reading to free the friction in its movement.",
+   "A Bourdon tube is a flattened tube bent into an arc and closed at one end. Pressure inside tends to make its cross-section rounder, which straightens the arc; the tip moves by a millimetre or two, and a quadrant, pinion and hairspring magnify this into a pointer rotation over 270°. Friction in the gearing, backlash and the elastic after-effect of the tube make the pointer stop slightly short on the way up and slightly high on the way down: this is hysteresis. A zero error shifts every reading equally; a span error grows in proportion to pressure; non-linearity bends the calibration curve.",
+   "Reading the gauge at the same pressures while increasing and then decreasing the load gives two sets of readings. Their mean minus the true pressure is the error at each point; its largest magnitude, as a percentage of the span, is compared with the accuracy class. The largest difference between the up and down readings is the hysteresis. The deviation of the mean readings from their least-squares straight line is the independent non-linearity. A class 1.0 gauge on a 0–10 bar span may be in error by no more than ±0.1 bar anywhere on the scale.",
+   "The reading is estimated between graduations to a fraction of the smallest division, usually a half or a fifth. The eye must be square to the dial: viewing at an angle displaces the pointer against the scale (parallax). Many test gauges have a mirror band under the pointer; the reading is taken when the pointer hides its own reflection."
+  ],
+  "expl": [
+   [
+    "To check a pressure gauge you need a pressure you know exactly. A dead-weight tester makes one from weights resting on a piston.",
+    "The piston fits its cylinder to a few micrometres. Oil underneath lifts it, and when it floats, pressure times area equals the weight.",
+    "The gauge under test is screwed onto the same oil line, so it sees the same pressure."
+   ],
+   [
+    "Weights go on one at a time. At each step the weights are spun, the gauge is tapped, and the pointer is read.",
+    "After full scale the weights come off again, and the gauge is read on the way down.",
+    "On the way down the pointer sits a little high. Friction in the movement and the tube itself make it lag behind the pressure."
+   ],
+   [
+    "Mean reading minus true pressure is the error. Its largest value, as a percentage of span, is compared with the class on the dial.",
+    "The largest gap between the up and down readings is the hysteresis.",
+    "A straight line fitted through the mean readings shows zero error, span error and any bend in the curve."
+   ]
+  ],
+  "q": [
+   "The weights are marked for standard gravity, but local gravity is 0.24 % lower. The true pressure is",
+   "You overshoot the 6 bar step on the way up and then remove a little pressure. What should you do?",
+   "A 0–10 bar gauge of class 1.0 has a largest error of 0.13 bar. It"
+  ]
+ },
+ "tc": {
+  "name": "Calibration of a Thermocouple",
+  "theory": [
+   "When two different metals are joined at both ends and the junctions are at different temperatures, a current flows in the loop. If the loop is opened, an emf appears across the opening: this is the Seebeck effect. The emf depends only on the two materials and the temperatures of the two junctions, not on the temperature distribution along the wires, provided each wire is homogeneous. Typical sensitivities are about 41 µV/°C for type K, 52–55 µV/°C for type J and 40–60 µV/°C for type T.",
+   "The law of intermediate metals says that a third metal, such as the copper leads of a voltmeter, adds no emf as long as both of its junctions are at the same temperature; so the meter can be connected anywhere. The law of intermediate temperatures says that emfs add: E(t, 0) = E(t, t_rj) + E(t_rj, 0). Reference tables give E(t, 0 °C), so a junction at room temperature is corrected by adding the table emf at room temperature. This is what cold-junction compensation does electronically.",
+   "The emf of each standard type is defined by polynomial reference functions published with ITS-90 (NIST Monograph 175, IEC 60584-1). Real wires deviate from the table because of small differences in composition. IEC 60584-1 sets tolerance classes: for types K and J, class 1 permits ±1.5 °C or ±0.4 % of the temperature, whichever is larger, and class 2 permits ±2.5 °C or ±0.75 %.",
+   "The thermocouple and a calibrated reference thermometer, here a platinum resistance thermometer (PRT), are placed side by side in a stable temperature source: a stirred liquid bath or a dry-block calibrator. Both must be immersed deeply enough that heat conducted along the sheath does not cool the tip, usually 15 to 20 sheath diameters. At each set point the readings are taken only after the block is stable. The emf is corrected for the reference junction, converted to temperature with the table, and compared with the reference.",
+   "A thermocouple used at high temperature drifts: type K wires change composition by preferential oxidation and by short-range ordering in the 250–550 °C range, so the emf generated in the part of the wire that sat in the temperature gradient changes. A drifted thermocouple is inhomogeneous, and its error depends on how it is installed; calibrating it in a different immersion than it is used gives a misleading correction. For this reason old thermocouples are replaced rather than corrected."
+  ],
+  "expl": [
+   [
+    "A thermocouple is two different wires joined at the tip. The emf it makes depends on the temperature of that tip and of the other end, the reference junction.",
+    "Reference tables assume the other end is at zero degrees. Here it is either in melting ice, or at the terminal block at room temperature.",
+    "The thermocouple and a calibrated platinum thermometer go side by side into the same hot block."
+   ],
+   [
+    "The block heats to each set point and is held until the platinum thermometer stops changing.",
+    "At each point you note the reference temperature and the thermocouple emf, to a microvolt.",
+    "Up to four hundred degrees, eight points are enough to see how the error changes."
+   ],
+   [
+    "Add the reference-junction emf, then look up the temperature in the table, interpolating between rows.",
+    "The difference from the platinum reading is the deviation. Plotted against temperature, it is compared with the class limits.",
+    "A deviation that grows with temperature after long use means the wires have changed. That thermocouple is replaced."
+   ]
+  ],
+  "q": [
+   "The reference junction is at 28 °C and you use the meter reading directly in the table. Your temperatures will be",
+   "Why wait for stability at each point?",
+   "At 300 °C a type K thermocouple deviates by +1.9 °C. Class 1 allows"
+  ]
+ },
+ "rtd": {
+  "name": "Calibration of a Resistance Temperature Detector (Pt100)",
+  "theory": [
+   "The electrical resistance of a pure metal rises with temperature because lattice vibrations scatter the conduction electrons more strongly. Platinum is chosen because it is chemically stable, can be made very pure, and has a reproducible, nearly linear resistance–temperature relation from −200 to 850 °C. A Pt100 has a resistance of 100 Ω at 0 °C and about 138.5 Ω at 100 °C.",
+   "IEC 60751 defines the industrial platinum resistance thermometer by R = R_0(1 + At + Bt^2) for 0 to 850 °C, with an extra term C(t − 100)t^3 below 0 °C. The coefficients A = 3.9083 × 10^−3 and B = −5.775 × 10^−7 correspond to a mean coefficient α = (R_100 − R_0)/(100R_0) = 0.003 85 °C^−1. A real sensor has its own R_0 and α; calibration finds them, or finds the error against the standard curve at each temperature.",
+   "The sensitivity of a Pt100 is only about 0.39 Ω/°C, so a few tenths of an ohm in the leads matter. In a 2-wire connection the meter sees the sensor plus both leads: 0.6 Ω of leads reads as 1.5 °C too hot, and the error changes as the leads warm. In a 3-wire connection one lead is placed in each adjacent arm of a bridge, so equal leads cancel. In a 4-wire connection a constant current is passed through one pair of leads and the voltage is measured with the other pair, which carries no current, so the lead resistance does not enter at all. Laboratory calibration always uses 4 wires.",
+   "The measuring current dissipates I^2R in the sensor and raises its temperature above the medium by I^2R/δ, where δ is the dissipation constant: tens of mW/°C in a stirred liquid, a few mW/°C in still air. At 1 mA a Pt100 dissipates 0.1 mW and the error is negligible; at 5 mA it dissipates 2.5 mW, 25 times more. Comparing readings at two currents and extrapolating to zero current is the standard way to remove self-heating.",
+   "R_0 is measured in an ice point, the most reproducible fixed point available in an ordinary laboratory. The other points are taken in a stirred bath against a reference thermometer, waiting at each point until both sensors are stable. The resistance is converted to temperature with the standard equation and the error is compared with the class tolerances."
+  ],
+  "expl": [
+   [
+    "A Pt100 is a small coil or film of platinum. At zero degrees it measures one hundred ohms, and it gains about four tenths of an ohm per degree.",
+    "Four leads come out of the probe. How they are connected decides whether the leads themselves are measured too.",
+    "With the sensor end shorted, the meter shows the resistance of the leads alone."
+   ],
+   [
+    "The probe first sits in melting ice. Its resistance there is R zero.",
+    "Then it goes into the stirred bath with the reference thermometer. The bath steps up to one hundred and fifty degrees.",
+    "At each step both readings are allowed to settle before they are written down."
+   ],
+   [
+    "The standard equation, R equals R zero times one plus A t plus B t squared, is solved for t.",
+    "The difference from the reference is the error. It is compared with class A and class B.",
+    "Raise the current to five milliamps and the sensor heats itself, twenty-five times more than at one milliamp."
+   ]
+  ],
+  "q": [
+   "The leads total 0.8 Ω and you connect 2-wire. The reading will be",
+   "Why is the bath stirred?",
+   "Which change would make a 2-wire result match the 4-wire result?"
+  ]
+ },
+ "lvdt": {
+  "name": "Calibration of an LVDT using a Micrometer",
+  "theory": [
+   "The linear variable differential transformer is an inductive displacement transducer. A primary coil is wound at the centre of a non-magnetic tube, with two identical secondary coils on either side. A rod-shaped core of nickel-iron moves freely inside the tube without touching it. An AC voltage of a few volts at 1–10 kHz drives the primary; the core couples the primary flux into the secondaries.",
+   "The two secondaries are connected in series opposition. With the core central, equal voltages are induced in them and the output is (nearly) zero: the null position. When the core moves towards S1, the coupling to S1 rises and to S2 falls, so the output grows in proportion to displacement and is in phase with the excitation; on the other side it grows again but in anti-phase. Over the rated range the output amplitude is linear in displacement to within a few tenths of a per cent; beyond it, the core end approaches the outer end of a secondary and the output bends and eventually falls.",
+   "A real LVDT never gives exactly zero at the null: small differences between the secondaries, stray capacitance and harmonics in the excitation leave a residual voltage, mostly in quadrature (at 90°) to the signal. An rms voltmeter reads only the magnitude, so its calibration curve is V-shaped with a rounded bottom at the residual voltage, and it cannot tell the direction. A phase-sensitive demodulator multiplies the output by a reference derived from the excitation and filters it: the result is a DC voltage that changes sign at the null and largely rejects the quadrature residual.",
+   "The core does not touch the coils, so there is no friction or wear and the resolution is limited only by the electronics. The LVDT is robust, has infinite mechanical life, and tolerates temperature and vibration. It is used directly as a displacement gauge and, with springs and diaphragms, as the sensing element of load, pressure and acceleration transducers.",
+   "The LVDT body is clamped, and the core is moved by a micrometer head whose spindle carries it. The micrometer is read at each step; the null reading is found where the output crosses zero, and displacements are measured from it. The least-squares line through output against displacement gives the sensitivity; dividing by the excitation voltage gives the sensitivity in mV/V/mm quoted on data sheets. The largest deviation from the line, as a percentage of the full-scale output, is the independent non-linearity."
+  ],
+  "expl": [
+   [
+    "An LVDT has a primary coil in the middle and two secondaries either side. A soft-iron core slides inside without touching anything.",
+    "The primary is fed with a few volts at a few kilohertz. The secondaries are wired against each other.",
+    "With the core in the middle, the two secondary voltages cancel. That is the null."
+   ],
+   [
+    "The micrometer moves the core from one end to the other in equal steps.",
+    "At each step the micrometer is read to a hundredth of a millimetre, and the output voltage is written down.",
+    "Near the ends of travel the output starts to bend away from a straight line."
+   ],
+   [
+    "A straight line through the readings over plus and minus ten millimetres gives the sensitivity.",
+    "Divided by the excitation voltage, it becomes millivolts per volt per millimetre, the figure on the data sheet.",
+    "An rms meter cannot go below the residual null voltage, and reads the same on both sides. A phase-sensitive demodulator fixes both."
+   ]
+  ],
+  "q": [
+   "The core moves 2 mm towards secondary S1. The output",
+   "Why approach each reading by turning the micrometer in the same direction?",
+   "Doubling the excitation voltage, the sensitivity in mV/V/mm"
+  ]
+ },
+ "loadcell": {
+  "name": "Calibration of a Strain-Gauge Load Cell",
+  "theory": [
+   "A load cell measures force by measuring the small elastic strain it produces in a carefully shaped metal element. In a cantilever cell the load W at the free end produces a bending moment M = WL at a section a distance L from the load. The surface stress there is σ = M/Z = 6WL/(bh^2) for a rectangular section, tension on the top face and compression on the bottom, and the strain is ε = σ/E. The element is designed so that the strain at capacity is about 1000 µε (0.1 %), well inside the elastic range.",
+   "A foil strain gauge is a grid of thin metal foil on a polymer backing, bonded to the surface. When the surface stretches, the grid lengthens and narrows and its resistance rises: ΔR/R = GF·ε, where the gauge factor GF is about 2.1 for constantan foil. At 1000 µε a 350 Ω gauge changes by only 0.74 Ω, so a bridge circuit is needed to measure it.",
+   "Four resistances form a bridge excited by a DC voltage. When balanced, the output across the other diagonal is zero. For small changes the output is V_o = (V_ex/4)(ΔR_1/R − ΔR_2/R + ΔR_3/R − ΔR_4/R): changes in opposite arms add and in adjacent arms subtract. Placing the two tension gauges in arms 1 and 3 and the two compression gauges in arms 2 and 4 makes all four add: V_o = V_ex·GF·ε. A temperature change that alters all four gauges equally cancels. With only two active gauges the output halves.",
+   "The cell is exercised by loading to capacity a few times, which settles the gauge adhesive and the clamping. Weights are then added in equal steps to capacity and removed in the same steps. The output at capacity, less the zero, divided by the excitation voltage, is the rated output in mV/V, the figure used to match a cell to its indicator. A least-squares line gives the sensitivity; the largest deviation of the readings from it is the non-linearity, the largest difference between loading and unloading is the hysteresis, and the change in zero after the cycle is the zero return. All are expressed as percentages of the rated output.",
+   "Once calibrated, an unknown mass is found from its output with the calibration equation. Because mass is weighed through its weight mg, the cell responds to local gravity; it is calibrated in place, or corrected, for the gravity of the site."
+  ],
+  "expl": [
+   [
+    "A load cell is a metal beam that bends a tiny amount under load. Four strain gauges glued near its root feel that bending.",
+    "The two on top are stretched and the two underneath are squeezed. Wired in a bridge, all four signals add together.",
+    "With no load, the bridge output is close to zero."
+   ],
+   [
+    "Two-kilogram weights go on one at a time, gently, and the output is read after each.",
+    "At twenty kilograms the output is about twenty millivolts. Then the weights come off one by one.",
+    "Finally an unknown mass is hung, to be weighed with the calibration."
+   ],
+   [
+    "Subtract the zero, divide the output at capacity by the excitation, and you have the rated output in millivolts per volt.",
+    "Beam theory predicts it too: six W L over E b h squared gives the strain, and gauge factor times strain gives the output.",
+    "The calibration line then turns any output back into mass."
+   ]
+  ],
+  "q": [
+   "Why place the tension gauges in opposite arms of the bridge?",
+   "The output at zero after unloading is higher than at the start. This is",
+   "Excitation is raised from 5 V to 10 V. The rated output in mV/V"
+  ]
+ },
+ "speed": {
+  "name": "Calibration of a Tachometer using a Stroboscope and a Magnetic Pickup",
+  "theory": [
+   "Rotational speed is revolutions per unit time, so the most accurate speed measurements count events and divide by a precisely known time from a quartz clock. Both reference methods in this experiment do that: the toothed-wheel pickup counts teeth per second and the stroboscope matches a known flash frequency to the rotation.",
+   "A permanent magnet wound with a coil is placed close to a steel gear. As each tooth passes, the reluctance of the magnetic circuit changes and a voltage pulse is induced in the coil. With z teeth the pulse frequency is f = zN/60. A counter with a 1 s gate counts f to ±1 pulse, so with 60 teeth the reading in hertz is the speed in rpm, to ±1 rpm. The pickup needs no contact and no power, but its output falls at low speed because the induced voltage is proportional to the rate of flux change.",
+   "A xenon lamp produces short, intense flashes at an adjustable rate. If the shaft turns exactly once between flashes, a mark on it is lit at the same place each time and appears to stand still. If it turns twice, or three times, between flashes, the mark also stands still: single stationary images appear at all sub-multiples N/2, N/3 … of the speed. If the flash rate is twice the speed, the mark is lit at two opposite positions and two images appear. The rule is therefore to start at a high rate and decrease it until the first single stationary image appears, then confirm by halving the rate. If the display is not trusted, two consecutive single-image rates F_1 = N/n and F_2 = N/(n + 1) give N = F_1F_2/(F_1 − F_2).",
+   "A contact tachometer is pressed onto the centre of the shaft through a rubber cone; slip and deformation of the cone make it read low, increasingly at high speed, and it takes a little power from the shaft. An optical tachometer counts light reflected from a strip of tape and has no slip; its error is essentially one digit. Calibration compares the tachometer with the references at several speeds and gives an error curve or a correction factor."
+  ],
+  "expl": [
+   [
+    "A steel gear with sixty teeth turns with the shaft. A magnetic pickup sits half a millimetre from the teeth.",
+    "Every tooth that passes makes a pulse. A counter counts them for exactly one second.",
+    "Sixty teeth, so the count in hertz is the speed in revolutions per minute."
+   ],
+   [
+    "A stroboscope fires short flashes. If the shaft turns exactly once between flashes, the white mark is always lit in the same place, and seems to stand still.",
+    "But it also stands still if the shaft turns twice, or three times, between flashes. And at twice the speed you see two marks.",
+    "So come down from a high flash rate. The first single, still mark is the speed."
+   ],
+   [
+    "At each speed the hand tachometer is read too. Its error is its reading minus the reference, as a percentage.",
+    "A rubber-cone tachometer slips a little, so it reads low, and more so at high speed.",
+    "A straight line through tachometer against reference gives a correction for every reading."
+   ]
+  ],
+  "q": [
+   "With a 30-tooth gear, the counter reads 800 Hz. The speed is",
+   "A single stationary mark appears at 1500 flashes/min. Halving to 750 also gives a single mark. The speed is",
+   "Why is the pickup a better reference than the contact tachometer?"
+  ]
+ },
+ "strain": {
+  "name": "Young’s Modulus and Poisson’s Ratio using Strain Gauges",
+  "theory": [
+   "A foil strain gauge is a fine grid of constantan foil on a polyimide backing, bonded to the surface with a thin adhesive. When the surface is strained, the grid lengthens or shortens with it and its resistance changes: ΔR/R = GF·ε. The gauge factor GF, about 2 for constantan, is measured by the manufacturer for each production lot and printed on the packet. Strains in engineering structures are small, typically a few hundred microstrain (µε, 10^−6), so the resistance changes are a fraction of an ohm.",
+   "Four arms form a bridge; for small changes the output is V_o/V_ex = (GF/4)(ε_1 − ε_2 + ε_3 − ε_4). In a quarter bridge one arm is the active gauge and the other three are fixed resistors inside the indicator. In a half bridge for bending, the top gauge (tension) and the bottom gauge (compression) are in adjacent arms: their strains have opposite signs, so the subtraction doubles the output. A full Poisson bridge adds two transverse gauges, giving 2(1 + ν) times the axial strain. Any effect that changes adjacent arms equally, such as a temperature change, cancels.",
+   "When temperature changes, a gauge on a free specimen still changes resistance, because the foil resistivity changes and because the specimen expands differently from the foil. Self-temperature-compensated gauges are made to cancel this on one material, usually steel or aluminium; on a different material an apparent strain of several µε per °C remains. In a quarter bridge this appears as drift; in half and full bridges the active gauges in adjacent arms see the same temperature and the drift cancels.",
+   "A load W hung at a distance L from the gauge section produces a bending moment WL there. The surface stress is σ = 6WL/(bh^2) for a rectangular section b × h, tension on top and compression underneath. The axial gauges measure ε_a = σ/E; the transverse gauges measure the lateral contraction ε_t = −νε_a. Loading in steps and plotting σ against the corrected ε_a gives E as the slope; the ratio of the slopes of transverse and axial strain against load gives ν. Because the depth h enters squared, it must be measured carefully.",
+   "The strain indicator displays ε_ind = (4/GF_dial)(V_o/V_ex), the strain a single gauge of the dial gauge factor would need to produce that output. If the dial is not set to the gauge's own factor, every reading is scaled by GF_gauge/GF_dial; with more than one active gauge it is also multiplied by the bridge factor. True strain = ε_ind·(GF_dial/GF_gauge)/k."
+  ],
+  "expl": [
+   [
+    "A strain gauge is a thin metal grid glued to the surface. Stretch the surface and the grid’s resistance rises by gauge factor times strain.",
+    "Two gauges run along the beam, top and bottom. Two more run across it, to catch the sideways contraction.",
+    "The strain indicator balances the bridge to zero before any load goes on."
+   ],
+   [
+    "Weights go on half a kilogram at a time. Both channels are read after the beam stops swinging.",
+    "The axial reading climbs; the transverse reading goes negative, about a third as fast.",
+    "After unloading, the zero is read again. In a quarter bridge it may have drifted if the room warmed."
+   ],
+   [
+    "First correct the readings: multiply by the dial gauge factor over the real one, divide by the bridge factor.",
+    "Six W L over b h squared gives the stress at the gauges. Stress against true strain is a straight line, and its slope is Young’s modulus.",
+    "Transverse strain over axial strain, with the sign changed, is Poisson’s ratio."
+   ]
+  ],
+  "q": [
+   "Under a downward end load, the top axial gauge sees",
+   "In a half bridge with the top and bottom gauges in adjacent arms, the reading is",
+   "The beam depth is measured 2 % too small. Your E will be"
+  ]
+ },
+ "lathedyn": {
+  "name": "Measurement of Cutting Forces using a Lathe Tool Dynamometer",
+  "theory": [
+   "The cutting tool shears a layer of metal of thickness t_1 and width b off the rotating work. The resultant force on the tool is resolved into three components (ISO 3002-4): the cutting force F_c along the cutting velocity, the feed force F_f along the feed, and the passive (radial) force F_p. With an approach angle κ_r = 90° the cut is close to orthogonal: t_1 equals the feed, b equals the depth of cut, and F_p is small. F_c times the cutting speed is the power consumed; F_f loads the feed drive; both deflect the work and the tool.",
+   "The tool is clamped in a block supported on elastic elements, commonly octagonal rings. An octagonal ring has points where strain responds to a force in one direction and is nearly insensitive to a force at right angles; strain gauges at those points, wired in separate full bridges, give one output for F_c and another for F_f. The elements are stiff, so the dynamometer does not alter the cut, yet strained enough for a clear signal. It is calibrated by loading the tool tip with known weights in each direction; the small output of one channel under a load in the other direction is the cross-sensitivity.",
+   "The cutting force is roughly the area of the chip times a specific cutting force. Doubling the depth of cut doubles the width of chip and almost exactly doubles F_c. Doubling the feed doubles the chip thickness but increases F_c by less, because the specific cutting energy falls as the chip gets thicker (the size effect). Kienzle’s relation expresses this as F_c = k_c1.1·b·h^1−m_c, where k_c1.1 is the specific cutting force for a 1 mm × 1 mm chip and m_c is 0.15–0.3. A larger rake angle lowers the force by about 1.5 % per degree.",
+   "In the orthogonal model the chip is formed by shear along a plane at the shear angle φ to the cutting direction. The chip is thicker than the uncut layer: r = t_1/t_2 < 1, and geometry gives tan φ = r cos γ/(1 − r sin γ). The measured F_c and F_f are the sides of a force triangle whose resultant R can be resolved along the rake face (friction force F and normal N, μ = F/N = tan β) and along the shear plane (shear force F_s and normal F_n). The shear stress τ_s = F_s/(shear plane area) = F_s sin φ/(b t_1) is a property of the work material, close to its shear flow stress. Merchant’s minimum-energy hypothesis predicts φ = 45° + γ/2 − β/2, which agrees only roughly with experiments."
+  ],
+  "expl": [
+   [
+    "The tool sits in a dynamometer: a block held on stiff elastic rings with strain gauges on them.",
+    "One bridge responds to the downward cutting force, another to the force along the feed. Both are zeroed before cutting.",
+    "The bar is held between chuck and tailstock so it cannot bend away from the tool."
+   ],
+   [
+    "Each cut uses a new feed or depth. Once the cut is steady, both forces are read and a chip is collected.",
+    "Doubling the depth of cut nearly doubles the cutting force. Doubling the feed raises it by less.",
+    "The feed force is smaller, about a third to a half of the cutting force."
+   ],
+   [
+    "The chip comes off thicker than the layer that was cut. Their ratio gives the shear angle.",
+    "With the rake angle, the two measured forces give the friction on the rake face and the force along the shear plane.",
+    "Divided by the area of the shear plane, that is the shear stress of the metal being cut."
+   ]
+  ],
+  "q": [
+   "Why must the dynamometer be stiff?",
+   "Why does the force rise less than in proportion to feed?",
+   "A thicker chip (smaller r) means"
+  ]
+ },
+ "drilldyn": {
+  "name": "Measurement of Thrust and Torque using a Drill Tool Dynamometer",
+  "theory": [
+   "A twist drill has two cutting lips meeting at the point angle (118° for general work) and joined at the centre by the chisel edge. Each lip removes a chip of thickness h = (f/2) sin(σ/2), because each lip takes half the feed per revolution. The cutting force on each lip acts roughly at the middle of the lip, a quarter of the diameter from the axis, so the two lip forces form a couple: the torque. The rake angle along the lip varies from the helix angle at the outer corner to strongly negative near the centre.",
+   "At the centre the chisel edge has a large negative rake and almost no clearance; it does not cut but extrudes material sideways. It contributes little torque but a large part of the thrust: half or more in solid drilling of steel. A pilot hole larger than the chisel edge removes this contribution, which is why large holes are drilled in two stages, and why web thinning is used on large drills.",
+   "The work is clamped on a platform supported by elastic elements carrying strain gauges. Gauges along the axis of the elements, wired in one bridge, respond to the axial thrust; gauges at 45°, or on elements loaded tangentially, respond to torque. The bridges are arranged so that each output is insensitive to the other load. The dynamometer is calibrated with known axial loads and known torques applied through a lever.",
+   "The torque times the angular speed gives the power, P = 2πNM/60. The volume removed per minute is (π/4)d^2fN. Dividing power by removal rate gives the specific cutting energy, which for steel is 2–4 J/mm³ (N/mm²), higher than in turning at the same feed because the chips are thin and the rake is small near the centre.",
+   "Because the chip thickness depends on feed but not on diameter, the torque grows almost as d^2 (width of lip × lever arm) and as f^1−m_c. Shaw and Oxford found M ∝ f^0.8d^1.8 from extensive tests. Plotting the logarithm of torque against the logarithm of feed or diameter gives a straight line whose slope is the exponent."
+  ],
+  "expl": [
+   [
+    "Here the dynamometer holds the work, not the tool. Its strain-gauged supports feel the push of the drill and its twist.",
+    "One bridge reads thrust along the axis; the other reads torque.",
+    "The drill goes into the spindle last, and the indicator is zeroed before it touches the work."
+   ],
+   [
+    "Each run uses a new feed, or a bigger drill. Thrust and torque are read in the steady part of the cut.",
+    "Torque climbs steeply with diameter: the lips get longer and the lever arm too.",
+    "Most of the thrust comes from the chisel edge at the centre."
+   ],
+   [
+    "Torque times two pi times the speed, over sixty, is the power.",
+    "Divide by the volume removed per second, and you have the energy to remove each cubic millimetre.",
+    "A log–log plot of torque against feed gives a straight line; its slope is the feed exponent."
+   ]
+  ],
+  "q": [
+   "Why read only after the point has fully entered the work?",
+   "Doubling the feed roughly multiplies the torque by",
+   "Specific cutting energy has units of"
+  ]
+ },
+ "micrometer": {
+  "name": "Calibration of a Micrometer using Slip Gauges",
+  "theory": [
+   "A micrometer measures by the advance of a precision screw. The spindle is threaded with a pitch of 0.5 mm; the thimble, fixed to the spindle, carries 50 equal divisions round its edge, so one division corresponds to 0.5/50 = 0.01 mm. The sleeve carries a datum line with millimetre graduations above it and half-millimetre graduations below. A vernier of ten lines on the sleeve, spaced over nine thimble divisions, subdivides each thimble division into tenths, giving 0.001 mm.",
+   "Read the last fully visible millimetre line on the sleeve, add 0.5 mm if the half-millimetre line after it is visible, add the thimble division at (or just below) the datum line times 0.01 mm, and finally add the number of the vernier line that coincides exactly with a thimble line, times 0.001 mm. Always close the anvils with the ratchet stop, which slips at a set force (5–10 N), so that the measuring force is the same every time.",
+   "The zero error is the reading with the anvils in contact; it is corrected by adjusting the sleeve. The screw has a progressive (cumulative) pitch error, which grows steadily along the travel, and periodic errors that repeat every revolution, from a bent spindle or an eccentric thimble. The anvil faces must be flat and parallel, which is checked with an optical flat (interference fringes) and optical parallels. Temperature matters: a 40 mm steel frame warmed by 3 °C from the hand expands by about 1.4 µm, which moves the anvils apart and makes the reading low.",
+   "Gauge (slip) blocks are rectangular blocks of hardened steel or ceramic whose two measuring faces are lapped flat and parallel at a certified distance. They wring together into stacks. Grade K and 0 blocks are used for calibration of other blocks and instruments, grade 1 and 2 for inspection. For micrometer testing ISO 3611 specifies lengths 2.5, 5.1, 7.7, 10.3, 12.9, 15.0, 17.6, 20.2, 22.8 and 25 mm: each length advances the screw by a different fraction of a turn, so the thimble is tested at many angular positions.",
+   "The indication error at each length is the reading minus the actual length of the block (nominal plus certificate deviation). The largest error is compared with the permissible error. Subtracting the zero error from all errors shows the error of the screw itself."
+  ],
+  "expl": [
+   [
+    "Inside the micrometer is a screw with a half-millimetre pitch. One full turn of the thimble moves the spindle half a millimetre.",
+    "Fifty lines round the thimble split that into hundredths. A small vernier on the sleeve splits each hundredth into ten.",
+    "First the anvils are closed with the ratchet. Whatever it reads now is the zero error."
+   ],
+   [
+    "Gauge blocks of 2.5, 5.1, 7.7 millimetres and so on are measured one by one.",
+    "These odd lengths make the thimble stop at a different angle each time, so errors that repeat every turn are caught.",
+    "Each reading is compared with the block’s certified length."
+   ],
+   [
+    "Reading minus true length is the indication error at each block.",
+    "Take away the zero error and what is left belongs to the screw: a slope from pitch error and a wave from periodic error.",
+    "Hold the micrometer in your hand and the frame warms. The readings drift low."
+   ]
+  ],
+  "q": [
+   "Why use the ratchet instead of turning the thimble?",
+   "If all test blocks were whole multiples of 0.5 mm, you would",
+   "The frame warms by 2 °C. Over a 40 mm steel frame the reading changes by about"
+  ]
+ },
+ "comparator": {
+  "name": "Comparator Measurement with Slip Gauges and Design of Limit Gauges",
+  "theory": [
+   "A comparator compares a part with a standard and shows the difference. In the mechanical (dial) comparator the plunger movement is magnified by levers, gears or a twisted strip (Sigma, Johansson Mikrokator) so that 1 µm moves the pointer by a visible amount, typically 1–2 mm on the scale. Because only the difference is measured, errors of the instrument over its full range do not matter, only over the small range of the deviation. The comparator is set to zero on a standard, here a stack of slip gauges, and each part is then placed under the plunger on the same anvil.",
+   "Slip gauges are combined by wringing to make any size in steps of 0.0005 or 0.001 mm. The rule for the fewest blocks is to remove the last decimal place first: with an M87 set, the 1.0005 mm block takes care of a final 5 in the fourth decimal, a block from 1.001–1.009 the third decimal, a block from 1.01–1.49 brings the remainder to a multiple of 0.5 mm, then a block from 0.5–9.5 and a block from 10–90. Fewer blocks mean fewer wringing films and less accumulated error.",
+   "The tolerance zone of a shaft is given by a letter and a number, such as f7. The number is the tolerance grade: IT7 for Ø 25 mm is 21 µm. The letter is the fundamental deviation, the deviation of the limit nearest the basic size: for f it is es = −20 µm at 18–30 mm, so the shaft lies between 24.980 and 24.959 mm. Letters a–h place the shaft below the basic size (clearance with an H hole), js symmetric, and k–zc above (transition and interference). The Metrology Handbook has the full tables and a calculator.",
+   "A GO gauge must go over (or into) every good part, so it is made to the maximum material limit: the upper limit of a shaft, the lower limit of a hole. A NO-GO gauge must not go on any good part, so it is made to the least material limit. Taylor’s principle says that the GO gauge should check the whole form at once (a full ring for a shaft) so that errors of form such as bending or ovality are caught, while the NO-GO gauge should check one dimension at a time. Gauges are made with their own tolerance, and the GO gauge, which wears in use, is given a wear allowance; both are placed inside the work tolerance so that bad work is never accepted."
+  ],
+  "expl": [
+   [
+    "The shaft limits come from the ISO tables. The comparator is set at their mean.",
+    "A stack of slip gauges, wrung together, makes that exact size to a fraction of a micron.",
+    "With the stack under the plunger, the dial is set to zero."
+   ],
+   [
+    "Each pin is rolled under the plunger, and the largest reading is taken.",
+    "The dial shows how much bigger or smaller the pin is than the stack, in microns.",
+    "At the end the stack goes back under the plunger, to check the zero has not moved."
+   ],
+   [
+    "On the shop floor, a GO and a NO-GO snap gauge do the same job much faster.",
+    "The GO gauge is made at the largest allowed size, less a little for wear. The NO-GO at the smallest.",
+    "Both gauge tolerances sit inside the part tolerance, so a bad part can never pass."
+   ]
+  ],
+  "q": [
+   "Why use as few slip gauges as possible?",
+   "Why roll a round pin under the plunger?",
+   "Which gauge carries a wear allowance?"
+  ]
+ },
+ "sinebar": {
+  "name": "Measurement of Angle using a Sine Bar",
+  "theory": [
+   "A sine bar is a precision bar of hardened steel with two cylindrical rollers of equal diameter fixed at its ends. The distance between the roller centres, usually 100 or 200 mm, is made to within a few micrometres, and the top face is parallel to the line joining the roller centres. Placed with one roller on a surface plate and the other on a stack of slip gauges of height H, the bar forms the hypotenuse of a right-angled triangle, and its top face is inclined at θ = sin^−1(H/L).",
+   "To check a component, the sine bar is set to the nominal angle of the component and the component is clamped on it so that its face to be checked lies on top. A dial test indicator on a surface gauge is traversed along the face. If the component angle equals the set angle, the face is parallel to the surface plate and the indicator reading does not change. If the reading rises by δ over a distance l, the component angle is larger by tan^−1(δ/l). For a taper plug lying on the bar, the top generator makes the included angle with the bottom generator, so the bar is set to the included angle.",
+   "Differentiating sin θ = H/L gives dθ = dH/(L cos θ). With L = 200 mm and θ small, an error of 1 µm in H gives an angle error of about 1″. At 60° the same 1 µm gives 2″, at 80° nearly 6″. Errors in the roller spacing, in the slip-gauge stack and in the flatness of the surface plate are magnified in the same way. Sine bars are therefore recommended up to 45°; for larger angles the complementary angle is set up with an angle plate.",
+   "Angles in metrology are expressed in degrees, minutes and seconds: 1° = 60′ = 3600″. A Morse taper No. 3 has an included angle of about 2° 52′ 26″; a 7:24 steep taper (milling machine spindles) 16° 15′ 37″. One second of arc subtends about 0.5 µm over 100 mm."
+  ],
+  "expl": [
+   [
+    "A sine bar has two rollers an exact distance apart. One rests on the surface plate, the other on a stack of slip gauges.",
+    "The bar is the hypotenuse of a right triangle. Its angle is the inverse sine of stack height over bar length.",
+    "The part to be checked is clamped on top."
+   ],
+   [
+    "A dial test indicator touches the top of the part near the hinge end. Its reading is noted.",
+    "Then it slides along to a second point. If the reading changes, the part’s angle differs from the bar’s.",
+    "The rise in microns over the distance gives the correction, as an arc tangent."
+   ],
+   [
+    "A small error in the stack height changes the angle by that error divided by L cos theta.",
+    "Near zero degrees cos theta is one. At sixty degrees it is a half, so every error doubles.",
+    "That is why sine bars stay below about forty-five degrees."
+   ]
+  ],
+  "q": [
+   "For 15° on a 100 mm sine bar, the stack height is about",
+   "The reading rises by 10 µm over 50 mm. The part’s angle is",
+   "How do you check a 70° angle with a sine bar?"
+  ]
+ },
+ "autocoll": {
+  "name": "Straightness Measurement using an Autocollimator",
+  "theory": [
+   "An autocollimator combines a collimator and a telescope in one tube. An illuminated cross-line at the focal plane of the objective lens is projected as a parallel beam. A plane mirror in the beam sends it back; the objective focuses the returned beam onto a graticule beside the cross-line. If the mirror is square to the beam, the image falls on the cross-line itself. If the mirror tilts by θ, the beam returns at 2θ and the image moves by x = 2fθ. With f = 300 mm, 1″ of tilt moves the image by about 3 µm, which the eyepiece micrometer or graticule makes visible. Because the beam is parallel, the reading does not depend on the distance to the mirror.",
+   "The mirror is mounted on a carriage with two feet a known base length B apart (often 100 mm). Placed on the surface, the carriage tilts by the slope of the line between its feet. The surface is marked into stations B apart, and the carriage is stepped along so that each time its rear foot stands where its front foot stood before. The reading at each station gives the rise of the front foot over the rear: h = B tan θ, which for 1″ over 100 mm is 0.4848 µm.",
+   "Adding the rises station by station gives the height of every station relative to the first. A constant error in the readings, from the autocollimator not being exactly square to the surface, adds the same rise at every step and only tilts the profile. The profile is therefore referred to a straight line: the line joining the two end points (simple and common), the least-squares line, or the minimum-zone pair of parallel lines that just enclose the profile. The straightness error is the distance between the highest and lowest deviations from the reference line.",
+   "Measuring straightness along a pattern of lines (the \"Union Jack\" pattern) on a surface plate and tying them together at their crossing points gives the flatness of the whole surface. The same method checks machine-tool guideways, which ISO 230-1 and the machine test codes specify."
+  ],
+  "expl": [
+   [
+    "An autocollimator sends out a parallel beam and catches its own reflection from a mirror.",
+    "If the mirror tilts, the returning image slides across the graticule. Each second of arc is visible.",
+    "Distance does not matter, only tilt."
+   ],
+   [
+    "The mirror sits on a carriage with two feet one hundred millimetres apart.",
+    "At each station the carriage tilts by the slope between its feet. The reading is noted, and the carriage is stepped exactly one base length.",
+    "Each second of arc means the front foot is half a micron higher than the rear."
+   ],
+   [
+    "Add up the rises station by station and you have the height of the surface all along.",
+    "Draw a line from the first point to the last. The spread of the profile about that line is the straightness error.",
+    "A constant offset in every reading only tilts the profile, and disappears."
+   ]
+  ],
+  "q": [
+   "The mirror tilts by 5″. The returned beam turns by",
+   "Why must the rear foot go exactly where the front foot was?",
+   "The profile’s deviations from the end-point line run from −2 to +5 µm. The straightness error is"
+  ]
+ },
+ "roughness": {
+  "name": "Measurement of Surface Roughness using a Stylus Profilometer",
+  "theory": [
+   "Every machined surface carries irregularities on several scales. Form error is the long-range deviation from the intended shape; waviness has wavelengths of millimetres, from vibration, deflection and spindle run-out; roughness is the finest texture, from the cutting process itself: feed marks, tearing, built-up edge. Roughness controls friction, wear, sealing, fatigue strength and appearance, and is specified on drawings by parameters such as Ra and Rz.",
+   "A diamond stylus with a tip radius of 2–5 µm is drawn across the surface at constant speed. Its vertical movement is converted by an inductive transducer into an electrical signal and magnified 1000–100 000 times. The tip radius and the cone angle limit how narrow a valley it can follow; the measuring force (below 1 mN) is small enough not to scratch most metals. The trace runs perpendicular to the lay (here across the feed marks).",
+   "The primary profile is separated into waviness and roughness by a phase-correct Gaussian filter: the mean line at each point is a weighted average of the profile around it, with Gaussian weights whose width is set by the cut-off λc. Wavelengths equal to λc are passed at 50 %, much longer ones go into the mean line, much shorter ones into the roughness. ISO 4288 chooses λc from the spacing of the marks: for periodic profiles with mean spacing 0.13–0.4 mm, λc = 0.8 mm. The evaluation length is five cut-offs, with a run-up and run-down for the filter.",
+   "Ra, the arithmetical mean deviation of the roughness profile from its mean line, is the most widely used parameter. Rq, the root-mean-square deviation, weights large deviations more. Rz is the average of the peak-to-valley heights in the five sampling lengths; Rt is the largest peak-to-valley height over the whole evaluation length. Rz is typically 4–7 times Ra. The skewness Rsk shows whether the profile is dominated by peaks (positive) or valleys (negative). ISO 1302 groups Ra values into grades N1 (0.025 µm) to N12 (50 µm).",
+   "A tool with nose radius r_ε moving f per revolution leaves a train of circular arcs of radius r_ε and pitch f. Their peak-to-valley height is f^2/(8r_ε) and their Ra is f^2/(18√3 r_ε). Real surfaces are rougher than this ideal because of material side flow, tearing, built-up edge, tool wear and vibration; the difference grows at small feeds and with worn tools."
+  ],
+  "expl": [
+   [
+    "A diamond stylus, two microns at the tip, is lowered onto the turned surface.",
+    "As it is drawn across the feed marks, its rise and fall is magnified thousands of times.",
+    "The trace shows sharp ridges left by the tool, on top of a gentle waviness."
+   ],
+   [
+    "A Gaussian filter draws a smooth mean line through the profile. The cut-off decides how smooth.",
+    "What is left above and below the mean line is the roughness.",
+    "If the cut-off is too short, the filter starts to follow the feed marks, and the roughness shrinks."
+   ],
+   [
+    "Ra is the average distance of the profile from its mean line. Rq is the root mean square.",
+    "Rz averages the peak-to-valley height of five sampling lengths.",
+    "A perfect round-nosed tool would leave arcs of height feed squared over eight times the nose radius. Real surfaces are rougher."
+   ]
+  ],
+  "q": [
+   "Why trace across the feed marks?",
+   "The feed marks are 0.15 mm apart. A sensible cut-off is",
+   "Doubling the feed makes the ideal roughness"
+  ]
+ },
+ "opticalflat": {
+  "name": "Flatness Testing with an Optical Flat and Monochromatic Light",
+  "theory": [
+   "An optical flat is a disc of quartz or glass whose working face is flat to a few hundredths of a micrometre. Laid on a surface, it leaves a thin wedge of air. Light reflected from the underside of the flat and light reflected from the surface below travel paths that differ by twice the gap; with the phase change on reflection, they cancel when 2t = mλ, giving a dark fringe. Each fringe is therefore a line of constant gap, and successive fringes differ in gap by λ/2: about 0.29 µm for sodium light. Monochromatic light is needed so that the fringes are sharp and many can be counted.",
+   "The flat is pressed lightly so that it touches the surface along one edge, and a few fringes appear across the surface. Their number depends only on the tilt of the flat and does not matter. If the surface is flat, the fringes are straight and parallel. If it is curved, they bow. A straight line is laid through the two ends of a fringe; the bow b of the fringe from this line, divided by the spacing a between fringes, gives the departure from flatness in fringes, and multiplying by λ/2 gives micrometres. A bow of one quarter of a fringe in sodium light is 0.07 µm.",
+   "Because each fringe is a contour of equal gap, the fringe has to move to where the gap reaches its value. On a convex surface the middle is high, so the gap grows more slowly there and the fringe has to go further from the contact edge: the fringes bow away from the contact. On a concave surface they bow towards it. A light touch on the flat confirms this: the fringes move away from the point where the gap is being closed.",
+   "Two gauges of the same nominal size are wrung on a flat base plate a distance L apart, and the optical flat is laid across both. If the flat is parallel to the master, no fringes appear on it; the test gauge then shows n fringes across its width l because the flat is tilted. The tilt is n(λ/2)/l, so over the distance L the test gauge is higher than the master by n(λ/2)(L/l). Fringe patterns on both gauges also show whether their faces are flat and parallel."
+  ],
+  "expl": [
+   [
+    "An optical flat is a quartz disc polished flat to a few hundredths of a micron.",
+    "Laid on a surface with one edge touching, it leaves a wedge of air a fraction of a micron thick.",
+    "Under sodium light, dark bands appear wherever the air gap is a whole number of half wavelengths."
+   ],
+   [
+    "On a flat surface the fringes are straight. Here they bow.",
+    "Join the ends of a fringe with a straight line. How far its middle strays, compared with the fringe spacing, is the flatness error in half wavelengths.",
+    "If the middles bow away from the contact edge, the centre is high: the surface is convex."
+   ],
+   [
+    "Two slip gauges stand side by side. The flat bridges them.",
+    "The master shows no fringes. The test gauge shows several, because the flat is tilted.",
+    "Fringes times half a wavelength, times the gauge separation over the gauge width, is the height difference."
+   ]
+  ],
+  "q": [
+   "Moving from one dark fringe to the next, the air gap changes by",
+   "A fringe bows by a quarter of the spacing in sodium light. The surface is out of flat by about",
+   "More fringes across the test gauge mean"
+  ]
+ },
+ "thread": {
+  "name": "Effective Diameter of a Screw Thread by the Two-Wire Method",
+  "theory": [
+   "A metric thread has a 60° included angle. Its major diameter d is the crest diameter, its minor diameter the root diameter, and its pitch p the axial distance between corresponding points of adjacent threads. The effective or pitch diameter d_2 is where the thread ridge and the groove have equal widths, p/2; for the ISO basic profile d_2 = d − 0.6495p. The fit between a bolt and a nut, and the load each flank carries, depends on the effective diameter far more than on the major diameter.",
+   "The bench (floating carriage) micrometer has a micrometer head on one side and a fiducial indicator on the other, both on a carriage that floats on balls at right angles to the work, which is held between centres. Every reading is taken with the fiducial indicator at its index, so the measuring force is always the same. The instrument is used as a comparator: it is first read over a standard cylinder of certified diameter S close to the size being measured (reading R_1), then over the work (R_2); the size of the work is S + (R_2 − R_1).",
+   "Two wires of equal, known diameter d are placed in opposite grooves of the thread and the micrometer is read over them, giving the dimension over the wires M. Subtracting the wire diameters gives T = M − 2d, the dimension under the wires. Geometry of the wire seated against two 60° flanks then gives E = T + P, with P = 0.866p − d. The three-wire method, with two wires on one side and one on the other, uses the same geometry: E = M − 3d + 0.866p.",
+   "A wire of diameter d_b = p/(2 cos 30°) = 0.577p touches the flanks exactly at the pitch line. Then a small error in the flank angle does not shift the wire, and the calculated effective diameter is correct even if the angle is wrong. A larger or smaller wire touches higher or lower on the flanks, and a flank-angle error changes M, so the result is in error. Matched sets of wires, calibrated to ±0.25 µm, are kept for each pitch.",
+   "ISO 965 specifies tolerance classes. For an external thread of class 6g the effective diameter must lie between d_2 + es and d_2 + es − T_d2, with fundamental deviation es = −(15 + 11p) µm and tolerance T_d2 = 90p^0.4d^0.1 µm for grade 6."
+  ],
+  "expl": [
+   [
+    "The floating carriage micrometer is first read over a standard cylinder of known diameter.",
+    "Every reading is taken with the small fiducial indicator on its mark, so the measuring force is always the same.",
+    "Then the thread takes the cylinder’s place, and two wires are hung in opposite grooves."
+   ],
+   [
+    "The micrometer is read over the two wires. The difference from the cylinder reading gives the dimension over the wires.",
+    "Then over the crests, which gives the major diameter.",
+    "Subtract two wire diameters: the dimension under the wires."
+   ],
+   [
+    "Add P, which is point eight six six times the pitch minus the wire diameter, and you have the effective diameter.",
+    "A best-size wire touches the flanks exactly at the pitch line. Then even a wrong flank angle does not move it.",
+    "With other wires, a flank-angle error creeps into the answer."
+   ]
+  ],
+  "q": [
+   "Why read over a standard cylinder first?",
+   "M = 20.393 mm with 1.443 mm wires. T =",
+   "For a 3 mm pitch, the best wire is about"
+  ]
+ },
+ "gear": {
+  "name": "Gear Tooth Thickness by Gear Tooth Vernier and Base Tangent Method",
+  "theory": [
+   "In a spur gear the circular pitch πm is shared between a tooth and a space. If each tooth were exactly πm/2 thick at the pitch circle, the meshing teeth would have no clearance and would jam with the slightest error or thermal expansion. Teeth are therefore thinned by a small, controlled amount, which gives the backlash. Measuring tooth thickness is the way to check it.",
+   "The instrument has two verniers at right angles. The vertical vernier sets the depth of a tongue that rests on the tip of the tooth; the horizontal vernier measures the chord across the tooth at that depth. At the pitch circle the chord is w = z m sin(90°/z), and its depth below the tip, the chordal addendum, is h = m[1 + (z/2)(1 − cos(90°/z))]: slightly more than the module because the tip is curved. If the tip diameter is undersize, the tongue sits lower, so the setting must be reduced by half the error in tip diameter; otherwise the jaws close on a thicker part of the tooth. The constant chord, where the tooth touches a rack, has a length (πm/2)cos^2α independent of the number of teeth, and is sometimes used instead.",
+   "The main scale is divided in millimetres. The vernier has 50 divisions in 49 mm, so each vernier division is 0.98 mm and the difference, the least count, is 0.02 mm. The reading is the main-scale value just before the vernier zero, plus the number of the vernier division that lines up exactly with a main-scale line, times 0.02 mm.",
+   "Any straight line tangent to the base circle is normal to the involute flanks it crosses. A disc micrometer with flat discs placed over k teeth therefore touches two opposite flanks at points on such a tangent, and the distance between them is W = m cos α[π(k − ½) + z inv α], where inv α = tan α − α is the involute function. k is chosen so that the contact points lie near the middle of the flanks: k ≈ zα/180° + 0.5. The span does not depend on the tip diameter or the gear centre, so it is quick and accurate; a thinning of the teeth by Δs reduces W by Δs cos α."
+  ],
+  "expl": [
+   [
+    "A gear tooth vernier has two scales. The vertical one sets how deep below the tip the measurement is taken.",
+    "The depth is the chordal addendum: where the jaws will meet the tooth on its pitch circle.",
+    "Then the horizontal jaws close on the two flanks."
+   ],
+   [
+    "The main scale is in millimetres. Fifty vernier divisions fill forty-nine millimetres.",
+    "Look for the one vernier line that lines up exactly with a main-scale line. Its number times two hundredths is added to the millimetres.",
+    "Several teeth round the gear are checked."
+   ],
+   [
+    "A disc micrometer spans several teeth and touches two opposite flanks.",
+    "The line between the contacts is tangent to the base circle, so the span depends only on the involute, not on the tip.",
+    "Thinner teeth give a shorter span, by the thinning times cos twenty degrees."
+   ]
+  ],
+  "q": [
+   "The tip is undersize, but you set the nominal depth. The reading is",
+   "The vernier zero is past 4 mm and line 36 coincides. The reading is",
+   "Why is the span method often preferred in production?"
+  ]
+ },
+ "tmm": {
+  "name": "Measurement of Thread Parameters using a Toolmaker’s Microscope",
+  "theory": [
+   "A toolmaker’s microscope views the work by transmitted collimated light, so that its outline appears as a sharp silhouette. The eyepiece contains a cross-hair (often with additional angle lines) on a rotatable graticule; a degree scale with a vernier, the goniometer, reads its rotation to one minute. The work sits on a stage that moves in two perpendicular directions under micrometer heads reading to 0.001–0.005 mm, so any point on the silhouette can be brought under the cross-hair and its position read. The column can be tilted either way to follow the helix of a thread.",
+   "The thread axis is aligned with the X traverse by following a crest line with the horizontal hair. The cross-hair is then set on a flank at the pitch line and the X micrometer read; the stage is moved until the hair lies on the corresponding flank of the next thread, and so on. Differences of successive readings are the individual pitches; the deviation of each reading from i × p is the cumulative pitch error. Pitch errors matter because a thread with an error δp over its length of engagement behaves as if its effective diameter were larger by about 1.732 δp: it will not enter a correct nut or gauge.",
+   "The goniometer is set to 0° with the hair perpendicular to the thread axis, then rotated until the hair lies exactly along one flank, and the angle read; then along the other flank. For an ISO thread each should be 30° and the sum 60°. Flank-angle errors also increase the virtual effective diameter.",
+   "A thread is a helix of lead angle ψ = tan^−1[p/(πd_2)], a few degrees. Light parallel to the plane of the axis passes obliquely through the thread groove, so one flank is seen edge-on and sharp, the other blurred and displaced. Tilting the microscope column (or the centres) by ψ in the direction of the helix brings the light along the groove, and both flanks become sharp. For left-flank and right-flank readings some microscopes are tilted each way in turn."
+  ],
+  "expl": [
+   [
+    "Light shines up through the stage, so the thread appears as a black silhouette against a bright field.",
+    "The column is tilted by the thread’s helix angle, so both flanks look sharp.",
+    "The stage moves under two micrometer heads; the eyepiece cross-hair can be rotated against an angle scale."
+   ],
+   [
+    "The cross-hair is set on a flank, and the X micrometer is read.",
+    "The stage moves to the same flank of the next thread, five times over.",
+    "Differences give each pitch; departures from whole pitches give the cumulative error."
+   ],
+   [
+    "Rotate the cross-hair to lie along the left flank and read the goniometer; then the right flank.",
+    "Together they should make sixty degrees.",
+    "Finally the Y traverse from crest to crest gives the major diameter."
+   ]
+  ],
+  "q": [
+   "Why tilt the column?",
+   "Why does cumulative pitch error matter for fit?",
+   "Flanks read 30° 05′ and 29° 58′. The included angle is"
+  ]
+ }
+}
