@@ -1,5 +1,7 @@
 # Setting up report submissions (about 10 minutes, once)
 
+Files: `Code.gs` (this folder) goes into Apps Script; `config.js` (repository root) gets the web-app URL. Nothing else is needed: the script creates the *Submissions*, *Feedback*, *Certificates* and *Rejected* tabs and the Drive folder itself on first use.
+
 Students press **Submit to faculty** on the Report tab, and must complete a short **feedback form** before they can print, download or submit. Each submission becomes one row of the *Submissions* sheet and each feedback form one row of the *Feedback* sheet, in a Google Sheet that you own. A submission row holds server time, Report ID, experiment, name, USN, section, safety acknowledgement time, whether the student set up the machine themselves (and how many interlock alarms they triggered), pre- and post-test scores (first attempt and current), normalised gain, results within tolerance, numericals, explainer concept checks, the conclusion and the four discussion answers.
 
 ## 1. Create the sheet and script
@@ -67,14 +69,15 @@ Students who have passed the post-test (60 % or more by default), checked their 
 
 **Changing the wording**: the pass mark, faculty name, institution and department can be set in `config.js` (see the commented lines there).
 
-## Full reports, issuing without a request, downloads from the link (version 2.1)
+## Full reports, issuing certificates, downloads from the link
 
-* **Full reports.** Each *Submit to faculty* now also saves the student's complete report (observations, graphs, calculations, uncertainty, discussion) as an HTML file in a Drive folder named **MMM Virtual Lab reports**. The *Full report (Drive)* column of the Submissions sheet links to it. On the Faculty page, **Submissions & reports → Download** fetches one report; **Download … reports (one file)** puts all shown reports in a single file that prints one report per page. Reports submitted before this version have only the sheet summary.
+* **Full reports.** Each *Submit to faculty* also saves the student's complete report (observations, graphs, calculations, uncertainty, discussion) as an HTML file in a Drive folder named **MMM Virtual Lab reports**, created automatically. The *Full report (Drive)* column of the Submissions sheet links to it. On the Faculty page, **Submissions & reports → Download** fetches one report; **Download … reports (one file)** puts all shown reports in a single file that prints one report per page.
 * **Issue certificate.** In **Submissions & reports**, students without a certificate have an **Issue certificate** button. It creates an approved certificate from their submission, even if they never requested one.
 * **Download from the link.** The verification link of an approved certificate (`…/#verify-<ID>`) has **Download certificate** buttons, so a student can download it on any computer. In **Certificate requests**, **Copy link** copies a student's link to send them.
 * **Logo.** Certificates and lab reports carry the MITE logo.
+* **Permissions.** At *Authorize access* (step 6) Google asks for Sheets and Drive access: Drive is needed to save the full reports.
 
-**After updating `Code.gs`**: paste the new file over the old one, save, then **Deploy → Manage deployments → pencil → Version: New version → Deploy**. The URL stays the same. Google will ask you to authorise again, because the script now saves files to your Drive: choose your account, then *Advanced → Go to … (unsafe) → Allow*. Two new columns (*Experiment code*, *Full report (Drive)*) are added to the Submissions sheet automatically.
+**After changing `Code.gs` later**: paste the new file over the old one, save, then **Deploy → Manage deployments → pencil → Version: New version → Deploy**. The URL stays the same.
 
 ## Feedback without the sheet
 
