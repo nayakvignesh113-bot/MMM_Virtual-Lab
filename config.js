@@ -1,6 +1,6 @@
 // Set submitUrl to your Google Apps Script web-app URL (see apps-script/SUBMISSIONS_SETUP.md).
 // Leave it empty to switch submission off; students can still print and download reports.
-window.MML_CONFIG = { submitUrl: '' };
+window.MML_CONFIG = { submitUrl: 'https://script.google.com/macros/s/AKfycbydLgnqAcZcFVsce1hBnSmO-laIrSuhJOIgPXTnT0LY-7x7TL7muY3WjoNU421KRtnc/exec' };
 // Optional certificate settings (uncomment to change):
 // window.MML_CONFIG.certMinPost = 60;               // post-test pass mark in %
 // window.MML_CONFIG.certFaculty = 'Dr. Vignesh Nayak Ullal';
